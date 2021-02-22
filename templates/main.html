@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+	rel="stylesheet">
+<title>Stock List Laptops</title>
+
+</head>
+<body>
+	<div class="title">
+		Customers List <br> <a href="test.php?action=add&id={{customer.id}}" class="submit">Add
+			New Customer</a>
+	</div>
+
+	<div class="tableContainer">
+
+		<table>
+
+
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>Phone</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th>Position</th>
+					<th>Company ID</th>
+					
+
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for customer in main %}
+				<tr>
+
+					<td><a href="test.php?action=show&id={{customer.id}}">{{customer.id}}</a></td>
+					<td>{{customer.name}}</td>
+					<td>{{customer.surname}}</td>
+					<td>{{customer.phone}}</td>
+					<td>{{customer.email}}</td>
+					<td>{{customer.address}}</td>
+					<td>{{customer.position}}</td>
+					<td>{{customer.company_id}}</td> 
+				
+
+
+
+
+					<td><a href="contactInfo1.php?id={{customer.id}}" class="button"><img
+							class='img' src='images/chat.svg' alt='seeMore' /></a></td>
+					<td><a href="companyInfo1.php?id={{customer.company_id}}" class="button"><img
+							class='img' src='images/employee.svg' alt='seeMore' /></a></td>
+					<td><a href="test.php?action=delete&id={{customer.id}}" class="button"><img
+							class='img' src='images/delete.svg' alt='delete' /></a></td>
+					<td><a href="test.php?action=edit&id={{customer.id}}"
+						class="button"><img class='img' src='images/edit.svg' alt='edit' /></a></td>
+						
+				</tr>
+				{% endfor %}
+			</tbody>
+
+
+		</table>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

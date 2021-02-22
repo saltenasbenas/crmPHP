@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+	rel="stylesheet">
+	    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<title>Edit Customer Info</title>
+ <script>
+      tinymce.init({
+        selector: '#textareatinymce',
+        plugins: 'print preview  importcss  searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media  template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount  imagetools textpattern noneditable help    charmap   quickbars  emoticons ',
+  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
+  tinydrive_dropbox_app_key: 'YOUR_DROPBOX_APP_KEY',
+  tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
+  tinydrive_google_drive_client_id: 'YOUR_GOOGLE_DRIVE_CLIENT_ID',
+  mobile: {
+    plugins: 'print preview  importcss  searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media  template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern noneditable help charmap mentions quickbars linkchecker emoticons '
+  },
+  menu: {
+    tc: {
+      title: 'TinyComments',
+      items: 'addcomment showcomments deleteallconversations'
+    }
+  },
+  menubar: 'file edit view insert format tools table tc help',
+  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+  autosave_ask_before_unload: true,
+  autosave_interval: '30s',
+  autosave_prefix: '{path}{query}-{id}-',
+  autosave_restore_when_empty: false,
+  autosave_retention: '2m',
+  image_advtab: true,
+  link_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_class_list: [
+    { title: 'None', value: '' },
+    { title: 'Some class', value: 'class-name' }
+  ],
+  importcss_append: true,
+  templates: [
+        { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+  ],
+  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+  height: 600,
+  image_caption: true,
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  noneditable_noneditable_class: 'mceNonEditable',
+  toolbar_mode: 'sliding',
+  spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+  tinycomments_mode: 'embedded',
+  content_style: '.mymention{ color: gray; }',
+  contextmenu: 'link image imagetools table configurepermanentpen',
+  a11y_advanced_options: true,
+  
+ 
+      });
+    </script>
+    </script>
+</head>
+<body>
+	<div class="title">Customers Info Edit</div>
+	<form method="post" class="form1" action="test.php?action=update&id={{customer.id}}">
+		<div class="main">
+			<div class="row">
+				<label for="fname">Name</label><br> <input class="un " type="text"
+					name="name" class="inputEdit" id="name" placeholder="" value="{{customer.name}}"
+					required><br> 
+					<label for="fname">Surname</label><br> <input
+					class="un " type="text" name="surname" class="inputEdit"
+					id="surname" placeholder="" value="{{customer.surname}}" required><br>
+			</div>
+			<div class="row">
+				<label for="fname">Phone</label><br> <input class="un " type="text"
+					name="phone" class="inputEdit" id="phone" placeholder="" value="{{customer.phone}}"
+					required><br>
+					 <label for="fname">Email</label><br> <input
+					class="un " type="text" name="email" class="inputEdit" id="email"
+					placeholder="" value="{{customer.email}}" required><br>
+			</div>
+			<div class="row">
+				<label for="fname">Address</label><br> <input class="un "
+					type="text" name="address" class="inputEdit" id="address"
+					placeholder="" value="{{customer.address}}" required><br>
+					 <label for="fname">Position</label><br>
+				<input class="un " type="text" name="position" class="inputEdit"
+					id="position" placeholder="" value="{{customer.position}}" required><br>
+			</div>
+			<div >
+				<label for="fname">Company ID</label><br> <input class="un "
+					type="text" name="company_id" class="inputEdit" id="company_id"
+					placeholder="" value="{{customer.company_id}}" required><br>
+
+
+			</div>
+				<div >
+				<label for="fname">Description</label><br> 
+				<textarea id="textareatinymce" rows="20" cols="100" class="unEdit " name="description">{{customer.description}}</textarea>
+				
+				<br>
+
+
+			</div> 
+		</div>
+
+
+
+		<input type="submit" name="submit" value="Submit" class="submit"><br>
+	</form>
+
+</body>
+</html>

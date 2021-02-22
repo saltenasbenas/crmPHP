@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+	rel="stylesheet">
+<title>Stock List Laptops</title>
+</head>
+<body>
+	<div class="title">About Customer</div>
+
+     <div class="col-md-12 order-md-1">
+     
+          
+          <div class="card">
+            <div class="card-body">
+             <p>Customer Surname:   {{ customer.name }}</p>
+             <p>Customer Surname: {{ customer.surname }}</p>
+             <p>Customer Email: {{ customer.email }}</p>
+             <p>Customer Phone: {{ customer.phone }}</p>
+             <p>Customer Position: {{ customer.position }}</p>
+             <p>Customer Company ID: {{ customer.company_id }}</p>
+        
+         
+             <hr>
+              <p>Customer Description:</p>
+             {{ customer.description | raw }}
+            </div>
+          </div>
+          
+          
+          
+          
+        </div>
+	
+	
+
+
+
+
+
+
+
+</body>
+</html>

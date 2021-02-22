@@ -1,0 +1,21 @@
+
+
+Options +FollowSymLinks
+RewriteEngine On
+
+
+RewriteRule ^customer/(.*)$ /crm/test.php?action=show&id=$1
+
+
+ErrorDocument 404   /crm/404.html
+
+Redirect 301 /crm/config.php /crm/test.php
+RedirectMatch 301 /crm/app/(.*) /crm/test.php
+
+
+
+
+
+
+
+

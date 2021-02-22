@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+	rel="stylesheet">
+<title>Stock List Laptops</title>
+</head>
+<body>
+	<div class="title"> Company Info</div>
+
+	<div class="tableContainer">
+
+		<table>
+
+
+			<thead>
+				<tr>
+					<th>Company ID</th>
+					<th>Name </th>
+					<th>Address</th>
+					<th>Vat Code</th>
+					<th>Company Name</th>
+					<th>Phone</th>
+					<th>Email</th>
+					
+
+				</tr> 
+			</thead>
+			<tbody>
+				{% for companies in companyInfo %}
+				<tr>
+					<td>{{companies.id}}</td>
+					<td>{{companies.name}}</td>
+					<td>{{companies.address}}</td>
+					<td>{{companies.vat_code}}</td>
+					<td>{{companies.company_name}}</td>
+					<td>{{companies.phone}}</td>
+					<td>{{companies.email}}</td>
+					
+
+				
+				</tr>
+	{% endfor %}
+			</tbody>
+
+		</table>
+
+
+
+
+
+	</div>
+	
+	
+	
+
+
+
+
+
+
+
+</body>
+</html>
